@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Pais</title>
+</head>
+<body>
+  <h2>Agregar un nuevo país</h2>
+  <form action="/api/pais/crear" method="POST">
+    <label for="officialName">Nombre Oficial:</label>
+    <input type="text" name="officialName" required><br>
+
+    <label for="capital">Capital:</label>
+    <input type="text" name="capital" required><br>
+
+    <label for="borders">Fronteras: (separados por comas)</label>
+    <input type="text" name="borders" required><br>
+
+    <label for="area">Área:</label>
+    <input type="number" name="area" min="0" required><br>
+
+    <label for="population">Población:</label>
+    <input type="number" name="population" min="0" required><br>
+
+    <label for="gini">Gini:</label>
+    <input type="number" name="gini" min="0" required><br>
+
+    <input type="submit" value="Agregar Pais">
+  </form>
+</body>
+</html>

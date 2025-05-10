@@ -1,0 +1,93 @@
+<a href="/api/heroes/crear">Crear superhéroe</a>
+<h1>Lista de superhéroes</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del superhéroe</th>
+            <th>Nombre real</th>
+            <th>Edad</th>
+            <th>Planeta de Origen</th>
+            <th>Poderes</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% heroes.forEach(function(hero) { %>
+            <tr>
+                <td><%= hero.nombreSuperHeroe %></td>
+                <td><%= hero.nombreReal %></td>
+                <td><%= hero.edad %></td>
+                <td><%= hero.planetaOrigen %></td>
+                <td><%= hero.poderes.join(', ') %></td>
+                <td>
+                    <a href="heroes/editar/<%= hero._id %>">Editar</a>
+                    <a href="/api/heroes/eliminar/<%= hero._id %>" 
+                       onclick="return confirmarEliminacion('<%= hero.nombreSuperHeroe %>')">
+                       Eliminar
+                    </a>
+
+                    <script>
+                        function confirmarEliminacion(nombre) {
+                            return confirm(`¿Estás seguro de eliminar al superhéroe ${nombre}?`);
+                        }
+                    </script>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <a href="/api/heroes/crear">Crear superhéroe</a>
+    <h1>Lista de superhéroes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del superhéroe</th>
+                <th>Nombre real</th>
+                <th>Edad</th>
+                <th>Planeta de Origen</th>
+                <th>Poderes</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% heroes.forEach(function(hero) { %>
+                <tr>
+                    <td><%= hero.nombreSuperHeroe %></td>
+                    <td><%= hero.nombreReal %></td>
+                    <td><%= hero.edad %></td>
+                    <td><%= hero.planetaOrigen %></td>
+                    <td><%= hero.poderes.join(', ') %></td>
+                    <td>
+                        <a href="heroes/editar/<%= hero._id %>">Editar</a>
+                        <a href="/api/heroes/eliminar/<%= hero._id %>" 
+                            onclick="return confirmarEliminacion('<%= hero.nombreSuperHeroe %>')">
+                            Eliminar
+                         </a>
+                         
+                         <script>
+                           function confirmarEliminacion(nombre) {
+                             return confirm(`¿Estás seguro de eliminar al superhéroe ${nombre}?`);
+                           }
+                         </script>
+                         
+                         
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+</body>
+</html> -->

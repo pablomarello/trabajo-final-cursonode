@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar superhéroe</title>
+</head>
+<body>
+    <h2>Editar superhéroe</h2>
+
+    <form action="/api/pais/editar/<%= country._id %>" method="POST">
+
+
+        
+        <label for="officialName">Nombre oficial del país</label>
+        <input type="text" name="officialName" value="<%= country.name.official %>" required><br>
+
+        <label for="capital">Capital</label>
+        <input type="text" name="capital" value="<%= country.capital %>" required><br>
+
+        <label for="borders">Fronteras (separados por comas)</label>
+        <input type="text" name="borders" value="<%= country.borders ? country.borders.join(', ') : '' %>"><br>
+
+        <label for="area">Área</label>
+        <input type="text" name="area" value="<%= country.area %>"><br>
+
+        <label for="population">Población</label>
+        <input type="text" name="population" value="<%= country.population %>"><br>
+
+        <label for="gini">Gini</label>
+        <input type="text" name="gini" value="<%= country.gini %>"><br>
+
+        <input type="submit" value="Confirmar Cambios">
+    </form>
+</body>
+</html>

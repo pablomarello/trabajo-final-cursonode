@@ -1,0 +1,48 @@
+<div style="padding: 20px; height: 100vh;">
+    <h1>Lista de Paises</h1>
+    <a href="/api/pais/crear">Agregar nuevo Pais</a>
+    <h2>Paises en nuestra base de datos</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre del Pais</th>
+                <th>Capital</th>
+                <th>Fronteras</th>
+                <th>Área</th>
+                <th>Población</th>
+                <th>Índice Gini</th>
+                <th>Zonas Horarias</th>
+                <th>Creador</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% paises.forEach(pais => { %>
+            <tr>
+                <td><%= pais.name.official %></td>
+                <td><%= pais.capital %></td>
+                <td><%= pais.borders.join(', ') %></td>
+                <td><%= pais.area %></td>
+                <td><%= pais.population %></td>
+                <td><%= pais.gini %></td>
+                <td><%= pais.timezones.join(', ') %></td>
+                <td><%= pais.creador %></td>
+                <!-- <td><%= poblacion_total %></td>
+                <td><%= area_total %></td>
+                <td><%= gini_promedio %></td> -->
+                <td>
+                <!-- Botones de acción para editar y eliminar -->
+                <a href="/api/pais/editar/<%= pais._id %>">Editar</a> | 
+                <a href="/api/pais/eliminar/<%= pais._id %>" onclick="return confirm('¿Estás seguro de que deseas eliminar este país?')">Eliminar</a>
+                
+                </td>
+            </tr>
+            <% }) %>
+            <tr>
+                <td><b>Población total: <%= poblacion_total %></b></td>
+                <td><b>Área total: <%= area_total %></b></td>
+                <td><b>Gini promedio: <%= gini_promedio %></b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
