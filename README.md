@@ -27,7 +27,7 @@ Este proyecto consiste en el desarrollo de una aplicación web utilizando **Node
 ### 1. Clonar el repositorio
 
 git clone https://github.com/pablomarello/trabajo-final-cursonode.git
-cd trabajo-final-cursonode
+
 
 ### 2. Instalar dependencias
 
